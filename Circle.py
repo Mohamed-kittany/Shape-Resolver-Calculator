@@ -2,14 +2,13 @@
 from Shape import Shape
 import math
 
-
 class Circle(Shape):
-    def __init__(self, side):
-        super().__init__(side, side)  # Call the   superclass constructor
+    def __init__(self, radius: float):
+        self.radius = self.validate_positive_number(radius, "Radius")
 
-    def get_area(self):
-        return math.pi * (self.side1 ** 2)
+    def get_area(self) -> float:
+        return math.pi * (self.radius ** 2)
 
-    # Override the get area method
-    def __str__(self):
-        return f"The Circle area is: {self.get_area()}"
+    def __str__(self) -> str:
+        return f"The Circle area is: {self.get_area():.2f}"
+
