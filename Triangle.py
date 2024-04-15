@@ -1,13 +1,14 @@
 # !/usr/bin/env python3
-from Rectangle import Rectangle
+from Shape import Shape
 
+class Triangle(Shape):
+    def __init__(self, base: float, height: float):
+        self.base = self.validate_positive_number(base, "Base")
+        self.height = self.validate_positive_number(height, "Height")
 
-class Triangle(Rectangle):
-    def __init__(self, base, height):
-        super().__init__(base, height)
+    def get_area(self) -> float:
+        return 0.5 * self.base * self.height
 
-    def get_area(self):
-        return super().get_area() / 2
+    def __str__(self) -> str:
+        return f"The Triangle area is: {self.get_area():.2f}"
 
-    def __str__(self):
-        return f"The Triangle area is: {self.get_area()}"
