@@ -1,14 +1,14 @@
 # !/usr/bin/env python3
-from Rectangle import Rectangle
+from Shape import Shape
 from math import sqrt
 
+class Hexagon(Shape):
+    def __init__(self, side: float):
+        self.side = self.validate_positive_number(side, "Side")
 
-class Hexagon(Rectangle):
-    def __init__(self, side1):
-        super().__init__(side1, side1)  # Call the superclass constructor
-    def get_area(self):
-        return (3 * sqrt(3) * self.side1 ** 2) / 2
+    def get_area(self) -> float:
+        return (3 * sqrt(3) * (self.side ** 2)) / 2
 
-    # Override the get area method
-    def __str__(self):
-        return f"The Hexagon area is: {self.get_area()}"
+    def __str__(self) -> str:
+        return f"The Hexagon area is: {self.get_area():.2f}"
+
