@@ -1,19 +1,34 @@
 # !/usr/bin/env python3
 from abc import ABC, abstractmethod
 
-
 class Shape(ABC):
-    def __init__(self, side1, side2):
-        self.side1 = side1
-        self.side2 = side2
+    @staticmethod
+    def validate_positive_number(value: float, name: str = "Value") -> float:
+        """
+        Validates that a number is non-negative.
+
+        Args:
+        value (float): The value to validate.
+        name (str): The name of the parameter, used in the error message.
+
+        Returns:
+        float: The validated value if it's non-negative.
+
+        Raises:
+        ValueError: If the value is negative.
+        """
+        if value < 0:
+            raise ValueError(f"{name} must be non-negative")
+        return value
 
     @abstractmethod
-    def get_area(self):
+    def get_area(self) -> float:
         pass
 
     @abstractmethod
-    def __str__(self):
+    def __str__(self) -> str:
         pass
+
 
 
 
