@@ -5,7 +5,7 @@ import math
 
 class Circle(Shape):
     def __init__(self, side):
-        super().__init__(side, side)  # Call the superclass constructor
+        super().__init__(side, side)  # Call the   superclass constructor
 
     def get_area(self):
         return math.pi * (self.side1 ** 2)
