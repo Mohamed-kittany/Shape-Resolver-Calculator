@@ -10,7 +10,7 @@ circle_example = Circle(5)
 rectangle_example = Rectangle(2, 3)
 square_example = Square(5)
 hexagon_example = Hexagon(4)
-triangle_example = Triangle(8, 3)
+triangle_example = Triangle(8, 3 ,4 ,9)
 
 print(circle_example)
 print(rectangle_example)
